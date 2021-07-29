@@ -2,27 +2,28 @@
 
 # Projeto Final - Curso Toti Turma 8
 
-*** Descripção:
+* Descripção:
 CIARI "Centro de Inclusão e Ajuda para Refugiados e Imigrantes"
 Sistema Web para o Registro de Refugiados e Imigrantes do Centro CIARI, com a finalidade de fazer um CRUD de dados pessoais que facilite a busca segundo criterios por categoria de necesidades.
 #
-*** Integrantes:
+* Integrantes:
 Yaudith Aguilera,
 Luzdalis Lopez,
 Luisa Quinones.
-*** Mentoria: 
+
+* Mentoria: 
 Professor Nathan Miranda da Toti.Diversidade.
 
 # No BackEnd:
-*** Recursos utilizados:
+* Recursos utilizados:
 IDE Visual Studio Code, NodeJS (express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon, concurrently), MongoDB (cluster no MongoDB Atlas), PostMan.
 #
-Para a Iniciação:
-*** Clonar no Github https://github.com/AFREELUISAQT/Ciari-ProjetoFullStack.git
-*** Entrar na aplicação IDE de sua preferencia.
-*** Iniciar os serviços instalando: npm i (para o express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon).
-*** Executar API com node servidor.js na porta 5000.
-*** Testando API no Postman: Importar o arquivo /PostmanCollection/osmigrantes-migrantes.postman_collection.json e executar os métodos do CRUD.
+Iniciação e Execução:
+* Clonar no Github https://github.com/AFREELUISAQT/Ciari-ProjetoFullStack.git
+* Entrar na aplicação IDE de sua preferencia.
+* Iniciar os serviços instalando: npm i (para o express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon).
+* Executar API com node servidor.js na porta 5000.
+* Testando API no Postman: Importar o arquivo /PostmanCollection/osmigrantes-migrantes.postman_collection.json e executar os métodos do CRUD.
 
 # No FrontEnd:
 Recursos utilizados:
