@@ -3,7 +3,7 @@
 # Projeto Final - Curso Toti Turma 8
 
 * Descripção:
-CIARI "Centro de Inclusão e Ajuda para Refugiados e Imigrantes"
+SistCIARI "Sistema de Cadastro do Centro de Inclusão e Ajuda para Refugiados e Imigrantes"
 Sistema Web para o Registro de Refugiados e Imigrantes do Centro CIARI, com a finalidade de fazer um CRUD de dados pessoais que facilite a busca segundo criterios por categoria de necesidades.
 #
 * Integrantes:
@@ -27,10 +27,11 @@ Iniciação e Execução:
 
 # No FrontEnd:
 Recursos utilizados:
-xxxx,xxxx,xxxxx,.....
+IDE Visual Studio Code, ReactJS (.........), css......
 #
 Para a Iniciação:
 Xxxxx,xxxxxx,xxxxx.......
+* Executar App com npm run fakeapi e no alterno o npm start. Ou levantar todos os serviços (backend e frontend) con el comando simultáneo npm run dev segundo a declaração do script no package.json
 
 # Gratidão Especial:
 

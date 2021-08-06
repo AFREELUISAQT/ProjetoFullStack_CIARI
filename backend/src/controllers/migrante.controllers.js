@@ -1,5 +1,5 @@
 const Migrante = require("../models/migrante.model");
-const GuiaValidators = require("../validators/guia.validators");
+const guiaValidators = require("../validators/guiaValidators");
 const mailer = require("../config/mailer");
 
 module.exports = {
@@ -13,53 +13,46 @@ module.exports = {
       telefone,
       paisOrigem,
       cep,
-      rua,
-      numero,
-      complemento,
+      logradouro,
       bairro,
-      cidade,
+      localidade,
       uf,
       nivelInstrucao,
       trabalho,
     } = req.body;
 
-    let validation = new GuiaValidators();
+    let validation = new guiaValidators();
     validation.hasMinLen(
       req.body.nomeMigrante,
-      3,
-      "Nome precisa ter no mínimo 3 caracteres!"
+      2,
+      "Nome precisa ter no mínimo 2 caracteres!"
     );
     validation.hasMaxLen(
       req.body.nomeMigrante,
-      20,
-      "Nome precisa ter no máximo 20 caracteres!"
+      40,
+      "Nome precisa ter no máximo 40 caracteres!"
     );
     validation.hasMinLen(
       req.body.sobrenomeMigrante,
-      3,
-      "Sobrenome precisa ter no mínimo 3 caracteres!"
+      2,
+      "Sobrenome precisa ter no mínimo 2 caracteres!"
     );
     validation.hasMaxLen(
       req.body.sobrenomeMigrante,
-      20,
-      "Sobrenome precisa ter no máximo 20 caracteres!"
+      40,
+      "Sobrenome precisa ter no máximo 40 caracteres!"
     );
     validation.isRequired(req.body.emailMigrante, "O Email é obrigatorio!");
     validation.isEmail(req.body.emailMigrante, "O Email precisa ser válido!");
     validation.hasMinLen(
       req.body.telefone,
-      9,
-      "Telefone precisa ter no mínimo 9 dígitos!"
-    );
-    validation.hasMaxLen(
-      req.body.telefone,
-      12,
-      "Telefone precisa ter no máximo 12 caracteres!"
+      8,
+      "Telefone precisa ter no mínimo 8 dígitos!"
     );
     validation.hasMinLen(
       req.body.paisOrigem,
-      3,
-      "País de Origem precisa ter no mínimo 3 dígitos!"
+      2,
+      "País de Origem precisa ter no mínimo 2 dígitos!"
     );
     validation.hasMaxLen(
       req.body.paisOrigem,
@@ -70,21 +63,6 @@ module.exports = {
       req.body.cep,
       8,
       "Cep precisa ter no mínimo 8 dígitos!"
-    );
-    validation.hasMaxLen(
-      req.body.cep,
-      12,
-      "Cep precisa ter no máximo 12 caracteres!"
-    );
-    validation.hasMinLen(
-      req.body.nivelInstrucao,
-      3,
-      "Nível Instrução precisa ter no mínimo 3 caracteres!"
-    );
-    validation.hasMaxLen(
-      req.body.nivelInstrucao,
-      40,
-      "Nível Instrução precisa ter no máximo 40 caracteres!"
     );
 
     if (!validation.isValid()) {
@@ -104,11 +82,9 @@ module.exports = {
           telefone,
           paisOrigem,
           cep,
-          rua,
-          numero,
-          complemento,
+          logradouro,
           bairro,
-          cidade,
+          localidade,
           uf,
           nivelInstrucao,
           trabalho,
@@ -193,7 +169,7 @@ module.exports = {
 
   async searchTrabalho(req, res) {
     try {
-      const migrante = await Migrante.find({ trabalho: { $eq: "N" } });
+      const migrante = await Migrante.find({ trabalho: { $eq: "Nao" } });
       if (migrante) {
         res.json({
           status: 200,
@@ -231,53 +207,46 @@ module.exports = {
       telefone,
       paisOrigem,
       cep,
-      rua,
-      numero,
-      complemento,
+      logradouro,
       bairro,
-      cidade,
+      localidade,
       uf,
       nivelInstrucao,
       trabalho,
     } = req.body;
 
-    let validation = new GuiaValidators();
+    let validation = new guiaValidators();
     validation.hasMinLen(
       req.body.nomeMigrante,
-      3,
-      "Nome precisa ter no mínimo 3 caracteres!"
+      2,
+      "Nome precisa ter no mínimo 2 caracteres!"
     );
     validation.hasMaxLen(
       req.body.nomeMigrante,
-      20,
-      "Nome precisa ter no máximo 20 caracteres!"
+      40,
+      "Nome precisa ter no máximo 40 caracteres!"
     );
     validation.hasMinLen(
       req.body.sobrenomeMigrante,
-      3,
-      "Sobrenome precisa ter no mínimo 3 caracteres!"
+      2,
+      "Sobrenome precisa ter no mínimo 2 caracteres!"
     );
     validation.hasMaxLen(
       req.body.sobrenomeMigrante,
-      20,
-      "Sobrenome precisa ter no máximo 20 caracteres!"
+      40,
+      "Sobrenome precisa ter no máximo 40 caracteres!"
     );
     validation.isRequired(req.body.emailMigrante, "O Email é obrigatorio!");
     validation.isEmail(req.body.emailMigrante, "O Email precisa ser válido!");
     validation.hasMinLen(
       req.body.telefone,
-      9,
-      "Telefone precisa ter no mínimo 9 dígitos!"
-    );
-    validation.hasMaxLen(
-      req.body.telefone,
-      12,
-      "Telefone precisa ter no máximo 12 caracteres!"
+      8,
+      "Telefone precisa ter no mínimo 8 dígitos!"
     );
     validation.hasMinLen(
       req.body.paisOrigem,
-      3,
-      "País de Origem precisa ter no mínimo 3 dígitos!"
+      2,
+      "País de Origem precisa ter no mínimo 2 dígitos!"
     );
     validation.hasMaxLen(
       req.body.paisOrigem,
@@ -288,21 +257,6 @@ module.exports = {
       req.body.cep,
       8,
       "Cep precisa ter no mínimo 8 dígitos!"
-    );
-    validation.hasMaxLen(
-      req.body.cep,
-      12,
-      "Cep precisa ter no máximo 12 caracteres!"
-    );
-    validation.hasMinLen(
-      req.body.nivelInstrucao,
-      3,
-      "Nível Instrução precisa ter no mínimo 3 caracteres!"
-    );
-    validation.hasMaxLen(
-      req.body.nivelInstrucao,
-      40,
-      "Nível Instrução precisa ter no máximo 40 caracteres!"
     );
 
     if (!validation.isValid()) {
@@ -319,11 +273,9 @@ module.exports = {
         telefone,
         paisOrigem,
         cep,
-        rua,
-        numero,
-        complemento,
+        logradouro,
         bairro,
-        cidade,
+        localidade,
         uf,
         nivelInstrucao,
         trabalho,

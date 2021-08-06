@@ -1,10 +1,11 @@
 import React from "react";
+import "../assets/Footer.css";
 
 function Footer() {
   return (
-    <footer>
-      &copy; Copyright 2021 - by <strong>As3Dva´s.</strong> All rights reserved.
-    </footer>
+    <div>
+      <h4>&copy; Copyright 2021 - by As3Dva´s. All rights reserved.</h4>
+    </div>
   );
 }
 
