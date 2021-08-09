@@ -3,8 +3,8 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import schemaValidators from "./schemaValidators";
-import "../assets/Cadastro.css";
 import swal from "sweetalert";
+import "../assets/Cadastro.css";
 
 const initialValue = {
   _id: "",
@@ -30,7 +30,6 @@ const Cadastro = () => {
     handleSubmit,
     formState: { errors },
     reset,
-    //trigger,
   } = useForm({
     resolver: yupResolver(schemaValidators),
   });
@@ -48,14 +47,12 @@ const Cadastro = () => {
       .post("http://localhost:5000/migrante/novo", values)
       .then((response) => {
         console.log(response);
-        swal("Valeu!", "Cadastro feito com Sucesso", "success");
-        // window.alert("Deu Tudo Certo!");
+        swal("Valeu!", "Cadastro feito com Sucesso.", "success");
         reset();
       })
       .catch((error) => {
         console.log(error.message);
-        swal("Verifique os Dados!", "Esse email já Existe.", "error");
-        //window.alert("Esse email está cadastrado. Verifique os Dados!");
+        swal("Esse email já Existe!", "Verifique os Dados.", "error");
       });
 
   return (
@@ -63,7 +60,7 @@ const Cadastro = () => {
       style={{ display: "flex", flexDirection: "column" }}
       className="card-post"
     >
-      <h1>C a d a s t r o 📝</h1>
+      <h1>C a d a s t r o</h1>
       <div className="line-post1"></div>
 
       <div className="card-body-post">
@@ -222,7 +219,6 @@ const Cadastro = () => {
             <br />
             <div className="line-post2"></div>
             <label>Perfil Pessoal_</label> <br />
-            cd
             <label htmlFor="nivelInstrucao">Nível de Instrução:</label>
             <select
               className="form-control"
@@ -242,7 +238,7 @@ const Cadastro = () => {
             </select>
             <p className="error-message">{errors.nivelInstrucao?.message}</p>
             <br />
-            <label htmlFor="trabalho">Tem Emprego?</label>
+            <label htmlFor="trabalho">Trabalha?</label>
             <select
               className="form-control"
               {...register("trabalho")}

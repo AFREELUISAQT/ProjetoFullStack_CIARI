@@ -2,14 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import swal from "sweetalert";
-import {
-  faSearch,
-  faTrashAlt,
-  faEdit,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faEye } from "@fortawesome/free-solid-svg-icons";
 
-function Gestao() {
+function Listagem() {
   const [list, setList] = useState([]);
   const [tablaList, setTablaList] = useState([]);
   const [busca, setBusca] = useState("");
@@ -57,33 +52,9 @@ function Gestao() {
     metGet();
   }, []);
 
-  function metDelete(id) {
-    swal({
-      title: "Eliminar Dados.",
-      text: "Você tem Certeza de Eliminar issos Dados?",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        axios
-          .delete(`http://localhost:5000/migrante/${id}`)
-          .then((response) => {
-            console.log(response.data.data);
-            setList(list.filter((list) => list._id !== id));
-          });
-        swal("Cadastro Eliminado com Sucesso!", {
-          icon: "success",
-        });
-      } else {
-        swal("Beleza! Seus dados estão Seguros.");
-      }
-    });
-  }
-
   return (
     <div>
-      <h1>Gestão de Cadastros</h1>
+      <h1>Listagem de Cadastros</h1>
       <div className="containerInput">
         <label>
           Busca pelo: <br />
@@ -121,7 +92,7 @@ function Gestao() {
               <th>Nível de Instrução</th> */}
               <th>Trabalha?</th>
               <th>
-                Opções <br /> Editar | Eliminar
+                Opçõe <br /> Ver Mais...
               </th>
             </tr>
           </thead>
@@ -145,20 +116,11 @@ function Gestao() {
                   <td>{migrantes.nivelInstrucao}</td> */}
                   <td>{migrantes.trabalho}</td>
                   <td>
-                    <Link to={{ pathname: `/edicao/${migrantes._id}` }}>
+                    <Link to={{ pathname: `/vermais/${migrantes._id}` }}>
                       <button className="btn btn-primary">
-                        <FontAwesomeIcon icon={faEdit} />
+                        <FontAwesomeIcon icon={faEye} />
                       </button>
                     </Link>
-
-                    {"  |  "}
-
-                    <button
-                      className="btn btn-danger"
-                      onClick={() => metDelete(migrantes._id)}
-                    >
-                      <FontAwesomeIcon icon={faTrashAlt} />
-                    </button>
                   </td>
                 </tr>
               ))}
@@ -169,4 +131,4 @@ function Gestao() {
   );
 }
 
-export default Gestao;
+export default Listagem;

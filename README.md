@@ -3,8 +3,8 @@
 # Projeto Final - Curso Toti Turma 8
 
 * Descripção:
-SistCIARI "Sistema de Cadastro do Centro de Inclusão e Ajuda para Refugiados e Imigrantes"
-Sistema Web para o Registro de Refugiados e Imigrantes do Centro CIARI, com a finalidade de fazer um CRUD de dados pessoais que facilite a busca segundo criterios por categoria de necesidades.
+SistCIARI "Sistema de Cadastro do Centro de Inclusão e Ajuda para Refugiados e Imigrantes".
+Sistema Web para o registro de refugiados e imigrantes do Centro CIARI, com a finalidade de fazer um CRUD de dados pessoais que facilite a busca segundo criterios diversos.
 #
 * Integrantes:
 Yaudith Aguilera,
@@ -17,26 +17,21 @@ Professor Nathan Miranda da Toti.Diversidade.
 # No BackEnd:
 * Recursos utilizados:
 IDE Visual Studio Code, NodeJS (express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon, concurrently), MongoDB (cluster no MongoDB Atlas), PostMan.
-#
-Iniciação e Execução:
-* Clonar no Github https://github.com/AFREELUISAQT/Ciari-ProjetoFullStack.git
-* Entrar na aplicação IDE de sua preferencia.
-* Iniciar os serviços instalando: npm i (para o express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon).
-* Executar API com node servidor.js na porta 5000.
-* Testando API no Postman: Importar o arquivo /PostmanCollection/osmigrantes-migrantes.postman_collection.json e executar os métodos do CRUD.
 
 # No FrontEnd:
-Recursos utilizados:
-IDE Visual Studio Code, ReactJS (.........), css......
-#
-Para a Iniciação:
-Xxxxx,xxxxxx,xxxxx.......
-* Executar App com npm run fakeapi e no alterno o npm start. Ou levantar todos os serviços (backend e frontend) con el comando simultáneo npm run dev segundo a declaração do script no package.json
+* Recursos utilizados:
+IDE Visual Studio Code, ReactJS (axios, react-hook-form, @hookform/resolvers, yup, react-router-dom, @material-ui/core, react-bootstrap, bootstrap, reactstrap, sweetalert), Css3.
+
+# Iniciação e Execução:
+1. Clonar no Github https://github.com/AFREELUISAQT/ProjetoFullStack_CIARI.git
+2. Entrar na aplicação IDE de sua preferencia.
+3. Iniciar os serviços Backend instalando: npm i para o express, mongoose, cors, nodemailer, nodemailer-sendgrid, nodemon.
+4. Iniciar os serviços Frontend instalando: npm i para axios, @hookform/resolvers, yup, react-hook-form, react-router-dom, @material-ui/core, react-bootstrap,bootstrap, reactstrap, sweetalert.
+5. Testando API no Postman: Importar o arquivo /PostmanCollection/osmigrantes-migrantes.postman_collection.json e executar os métodos do CRUD.
+6. Rodar Sistema com o comando npm run dev.
 
 # Gratidão Especial:
 
 Agradecimientos primeiramente a Deus, nossas familias, nossos amigos e colegas; bem como dentro ou por fora do curso.
 
 Agradecimiento á Toti.Diversidade pela grande oportunidade, incluidos todos os envolvidos desde o processo de iniciação, até essa conclusão da mão de todos e cada um dos professores, e daqui para frente no processo de ubicação laboral.
-
-

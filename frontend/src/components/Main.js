@@ -5,12 +5,13 @@ import {
   Switch,
   NavLink,
 } from "react-router-dom";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 import Inicio from "./Inicio";
 import Cadastro from "./Cadastro";
-import List from "./List";
+import Listagem from "./Listagem";
+import VerMais from "./VerMais";
 import Gestao from "./Gestao";
+import Edicao from "./Edicao";
 
 function Main() {
   return (
@@ -30,7 +31,7 @@ function Main() {
           </NavLink>
 
           <NavLink
-            to="/list"
+            to="/listagem"
             className="btn- btn-dark"
             activeClassName="active"
           >
@@ -42,10 +43,25 @@ function Main() {
             className="btn- btn-dark"
             activeClassName="active"
           >
-            Gestao
+            Gestão
           </NavLink>
-        </div>
 
+          {/* <NavLink
+            to="/edicao"
+            className="btn- btn-dark"
+            activeClassName="active"
+          >
+            Edição
+          </NavLink> */}
+
+          {/* <NavLink
+            to="/vermais"
+            className="btn- btn-dark"
+            activeClassName="active"
+          >
+            Ver Mais...
+          </NavLink> */}
+        </div>
         <hr />
         <Switch>
           <Route path="/" exact>
@@ -56,12 +72,20 @@ function Main() {
             <Cadastro />
           </Route>
 
-          <Route path="/list">
-            <List />
+          <Route path="/listagem">
+            <Listagem />
           </Route>
 
           <Route path="/gestao">
             <Gestao />
+          </Route>
+
+          <Route path="/edicao/:id">
+            <Edicao />
+          </Route>
+
+          <Route path="/vermais/:id">
+            <VerMais />
           </Route>
         </Switch>
       </div>

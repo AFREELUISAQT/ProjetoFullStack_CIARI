@@ -38,12 +38,7 @@ const Inicio = () => {
         </Carousel.Item>
 
         <Carousel.Item interval={2000}>
-          <img
-            className="d-block w-100"
-            src={img2}
-            alt="Imagen2"
-            objectFit="cover"
-          />
+          <img className="d-block w-100" src={img2} alt="Imagen2" />
         </Carousel.Item>
 
         <Carousel.Item interval={2000}>

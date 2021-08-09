@@ -23,10 +23,6 @@ GuiaValidators.prototype.hasMaxLen = (value, max, message) => {
   if (!value || value.length > max) errors.push({ message: message });
 };
 
-// GuiaValidators.prototype.isFixedLen = (value, len, message) => {
-//   if (value.length != len) errors.push({ message: message });
-// };
-
 GuiaValidators.prototype.errors = () => {
   return errors;
 };
