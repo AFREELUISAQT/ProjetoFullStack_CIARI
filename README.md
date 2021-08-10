@@ -34,4 +34,4 @@ IDE Visual Studio Code, ReactJS (axios, react-hook-form, @hookform/resolvers, yu
 
 Agradecimientos primeiramente a Deus, nossas familias, nossos amigos e colegas; bem como dentro ou por fora do curso.
 
-Agradecimiento á Toti.Diversidade pela grande oportunidade, incluidos todos os envolvidos desde o processo de iniciação, até essa conclusão da mão de todos e cada um dos professores, e daqui para frente no processo de ubicação laboral.
+Agradecimiento á Toti.Diversidade pela grande oportunidade, incluidos todos os envolvidos desde o processo de iniciação, até essa conclusão da mão de todos e cada um dos professores, e daqui para frente no processo de ubiquação laboral.
