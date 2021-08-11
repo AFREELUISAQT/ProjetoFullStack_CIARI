@@ -53,71 +53,48 @@ function Listagem() {
   }, []);
 
   return (
-    <div>
-      <h1>Listagem de Cadastros</h1>
-      <div className="containerInput">
-        <label>
-          Busca pelo: <br />
-          Nome, <br />
-          ou Email, <br />
-          ou Status Laboral
-        </label>
+    <div className="containerGeral marginTop">
+      <h2>Listagem de cadastros</h2>
+      <div className="center">
+        <div>
+          <h5>
+            Busca pelo:
+            Nome,
+            ou Email,
+            ou Status Laboral
+          </h5>
+        </div>
         <input
-          className="form-control inputBuscar"
           value={busca}
-          placeholder="Digite o Nome ou Email ou Status Laboral (Trabalha? 'Sim' ou 'Nao')"
+          placeholder="Digite o Nome ou Email ou Status Laboral (trabalha: 'Sim' ou 'Nao')"
+          size="60"
           onChange={handleChange}
         />
-        <button className="btn btn-success">
+        <button className="Button">
           <FontAwesomeIcon icon={faSearch} />
         </button>
       </div>
 
-      <div className="table-responsive">
-        <table className="table table-sm table-bordered">
+      <div>
+        <table className="table">
           <thead>
             <tr>
-              <th>Nome</th>
-              <th>Sobrenome</th>
-              {/* <th>Data de Nascimento</th>
-              <th>Sexo</th> */}
-              <th>Email</th>
-              {/* <th>Telefone</th> */}
-              {/* <th>País de Origem</th> */}
-              {/* <th>Cep</th>
-              <th>Rua</th>
-              <th>Bairro</th>
-              <th>Cidade</th>
-              <th>Estado</th>
-              <th>Nível de Instrução</th> */}
-              <th>Trabalha?</th>
-              <th>
-                Opçõe <br /> Ver Mais...
-              </th>
+              <th className="coluna">NOME</th>
+              <th className="coluna">EMAIL</th>
+              <th className="coluna">TRABALHO</th> 
+              <th className="coluna">MAIS DADOS</th>
             </tr>
           </thead>
-
           <tbody>
             {list &&
               list.map((migrantes) => (
                 <tr key={migrantes._id}>
-                  <td>{migrantes.nomeMigrante}</td>
-                  <td>{migrantes.sobrenomeMigrante}</td>
-                  {/* <td>{migrantes.dataNascimento}</td>
-                  <td>{migrantes.sexo}</td> */}
-                  <td>{migrantes.emailMigrante}</td>
-                  {/* <td>{migrantes.telefone}</td> */}
-                  {/* <td>{migrantes.paisOrigem}</td> */}
-                  {/* <td>{migrantes.cep}</td>
-                  <td>{migrantes.logradouro}</td>
-                  <td>{migrantes.bairro}</td>
-                  <td>{migrantes.localidade}</td>
-                  <td>{migrantes.uf}</td>
-                  <td>{migrantes.nivelInstrucao}</td> */}
-                  <td>{migrantes.trabalho}</td>
-                  <td>
+                  <td className="coluna">{migrantes.nomeMigrante}</td>
+                  <td className="coluna">{migrantes.emailMigrante}</td>
+                  <td className="coluna">{migrantes.trabalho}</td>
+                  <td className="coluna">
                     <Link to={{ pathname: `/vermais/${migrantes._id}` }}>
-                      <button className="btn btn-primary">
+                      <button className="buttonVer">
                         <FontAwesomeIcon icon={faEye} />
                       </button>
                     </Link>
