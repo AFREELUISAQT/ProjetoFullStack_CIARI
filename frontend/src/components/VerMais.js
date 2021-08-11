@@ -11,16 +11,15 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   modal: {
     position: "relative",
-    width: 800,
+    width: "50%",
     backgroundColor: "white",
-    border: "2px solid #000",
-    borderRadius: "20px",
+    borderRadius: "2rem",
     boxShadow: theme.shadows[5],
-    padding: "16px 32px 24px",
+    padding: ".5rem",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: "1000px",
+    height: "90vh",
     overflow: "auto",
   },
   textfield: {
@@ -72,13 +71,12 @@ const VerMais = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div className="containerGeral">
         <Modal open={modal} onClose={abrirCerrarModal}>
-          <div className={styles.modal}>
-            <h1>M a i s d e ... 👀</h1>
+          <div className={styles.modal} >
+          <div className="cardModal color1">
+            <h2>Mais  de...</h2>
             <div className="line-post1"></div>
-
             <div className="card-body-post">
               <br />
               <form onSubmit={handleSubmit(metPut)}>
@@ -138,7 +136,7 @@ const VerMais = () => {
                     disabled
                     readOnly
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value={"Feminino"}>Feminino</option>
                     <option value={"Masculino"}>Masculino</option>
                     <option value={"NaoIndica"}>Prefero não indicar</option>
@@ -265,7 +263,7 @@ const VerMais = () => {
                     disabled
                     readOnly
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value="Inicial">Inicial</option>
                     <option value="Fundamental">Fundamental</option>
                     <option value="Meio">Meio</option>
@@ -287,16 +285,16 @@ const VerMais = () => {
                     disabled
                     readOnly
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value="Sim">Sim</option>
                     <option value="Nao">Não</option>
                   </select>
                   <p className="error-message">{errors.trabalho?.message}</p>
                 </div>
 
-                <div className="btn-post">
+                <div>
                   <Button
-                    className="btn-danger"
+                    className="buttonVer"
                     onClick={() => abrirCerrarModal()}
                     href="/listagem"
                   >
@@ -306,9 +304,9 @@ const VerMais = () => {
               </form>
             </div>
           </div>
+          </div>
         </Modal>
       </div>
-    </div>
   );
 };
 export default VerMais;

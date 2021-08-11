@@ -11,16 +11,15 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   modal: {
     position: "relative",
-    width: 800,
+    width: "50%",
     backgroundColor: "white",
-    border: "2px solid #000",
     borderRadius: "20px",
     boxShadow: theme.shadows[5],
-    padding: "16px 32px 24px",
+    padding: ".5rem",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    height: "1000px",
+    height: "90vh",
     overflow: "auto",
   },
   textfield: {
@@ -72,18 +71,17 @@ const Edicao = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div div className="containerGeral">
         <Modal open={modal} onClose={abrirCerrarModal}>
           <div className={styles.modal}>
-            <h1>E d i ç ã o</h1>
+          <div className="cardModal color2">  
+            <h2>Edição</h2>
+            <div className="center"><h4>Dados Pessoais:</h4></div>
             <div className="line-post1"></div>
-
             <div className="card-body-post">
               <br />
               <form onSubmit={handleSubmit(metPut)}>
                 <div>
-                  <label>Dados Pessonais_</label> <br />
                   <label htmlFor="nomeMigrante">Nome:</label>
                   <input
                     className="form-control"
@@ -130,7 +128,7 @@ const Edicao = () => {
                     name="sexo"
                     id="sexo"
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value={"Feminino"}>Feminino</option>
                     <option value={"Masculino"}>Masculino</option>
                     <option value={"NaoIndica"}>Prefero não indicar</option>
@@ -173,7 +171,6 @@ const Edicao = () => {
                   <p className="error-message">{errors.paisOrigem?.message}</p>
                   <br />
                   <div className="line-post2"></div>
-                  <label>Endereço Atual_</label> <br />
                   <label htmlFor="cep">Cep:</label>
                   <input
                     className="form-control"
@@ -239,7 +236,7 @@ const Edicao = () => {
                     name="nivelInstrucao"
                     id="nivelInstrucao"
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value="Inicial">Inicial</option>
                     <option value="Fundamental">Fundamental</option>
                     <option value="Meio">Meio</option>
@@ -259,17 +256,16 @@ const Edicao = () => {
                     name="trabalho"
                     id="trabalho"
                   >
-                    <option value={null}>Selecione uma opçõe_</option>
+                    <option value={""}>Selecione uma opçõe_</option>
                     <option value="Sim">Sim</option>
                     <option value="Nao">Não</option>
                   </select>
                   <p className="error-message">{errors.trabalho?.message}</p>
                 </div>
 
-                <div className="btn-post">
-                  <Button type="submit">Editar</Button>
+                <div>
+                  <Button className="buttonEditar" type="submit">Editar</Button>
                   <Button
-                    className="btn-danger"
                     onClick={() => abrirCerrarModal()}
                     href="/gestao"
                   >
@@ -279,9 +275,9 @@ const Edicao = () => {
               </form>
             </div>
           </div>
+          </div>
         </Modal>
       </div>
-    </div>
   );
 };
 export default Edicao;

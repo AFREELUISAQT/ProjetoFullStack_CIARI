@@ -1,10 +1,12 @@
 import React from "react";
-import "../assets/Footer.css";
 
 function Footer() {
   return (
     <div>
-      <h4>&copy; Copyright 2021 - by As3Dva´s. All rights reserved.</h4>
+      <footer>
+        <h5> CIARI, por As3Dva`s
+          C Copyright 2021 -  Todos os direitos reservados.</h5>
+      </footer>
     </div>
   );
 }
