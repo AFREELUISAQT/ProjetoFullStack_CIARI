@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import LogoCIARI from '../assets/imagens/LogoCIARI.png';
 import {
   BrowserRouter as Router,
@@ -14,34 +14,41 @@ import Gestao from "./Gestao";
 import Edicao from "./Edicao";
 
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const onClick = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const menuClassOpen = menuOpen ? "nav-menu_visible" : ""  
+
   return (
     <Router>
         <div className="header">
           <nav className="nave"> 
             <div><img  className="logo" src={LogoCIARI} alt="logo CIARI" width="260"></img></div>
-            <div><ul className="nav-menu">
+            <div><ul className={`nav-menu ${menuClassOpen}`}>
                 <li className="nav-menu-item">
-                    <Link to="/" className="nav-menu-link nav-menu-link_active">
+                    <Link to="/" className="nav-menu-link nav-menu-link_active" onClick={onClick}>
                         Inicio
                     </Link>
                 </li>
                 <li className="nav-menu-item">             
-                    <Link to="/cadastro" className="nav-menu-link">
+                    <Link to="/cadastro" className="nav-menu-link" onClick={onClick}>
                         Cadastro
                     </Link>
                 </li> 
-                <li className="nav-menu-item">             
-                    <Link to="/listagem" className="nav-menu-link">
+                <li className="nav-menu-item">              
+                    <Link to="/listagem" className="nav-menu-link" onClick={onClick}>
                         Listagem
                     </Link>
                 </li>
                 <li className="nav-menu-item">                
-                    <Link to="/gestao" className="nav-menu-link">
+                    <Link to="/gestao" className="nav-menu-link" onClick={onClick}>
                         Gestao
                     </Link>
                 </li> 
             </ul>
-            <button id="nav-toggle">
+            <button id="nav-toggle" onClick={onClick}>
                     <div id="b1"></div>
                     <div id="b2"></div>
                     <div id="b3"></div>

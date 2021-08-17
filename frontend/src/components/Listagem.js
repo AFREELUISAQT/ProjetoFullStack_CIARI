@@ -76,7 +76,7 @@ function Listagem() {
       </div>
 
       <div>
-        <table className="table">
+        <table className="table1">
           <thead>
             <tr>
               <th className="coluna">NOME</th>
