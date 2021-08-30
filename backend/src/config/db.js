@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
-const mongoUrl =
-  "mongodb+srv://ciaricluster:ciaricluster@cluster0.euxgq.mongodb.net/osmigrantes?retryWrites=true&w=majority";
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
+const password = process.env.DB_PASSWORD;
+
+const mongoUrl = `mongodb+srv://ciaricluster:${password}@cluster0.euxgq.mongodb.net/osmigrantes?retryWrites=true&w=majority`;
 mongoose.connect(
   mongoUrl,
   {

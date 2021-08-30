@@ -86,12 +86,7 @@ function Gestao() {
       <h2>Gestão de cadastros</h2>
       <div className="center">
         <div>
-          <h5>
-            Busca pelo:
-            Nome,
-            ou Email,
-            ou Status Laboral
-          </h5>
+          <h5>Busca pelo: Nome, ou Email, ou Status Laboral</h5>
         </div>
         <input
           value={busca}
@@ -105,12 +100,12 @@ function Gestao() {
       </div>
 
       <div>
-        <table className="table">
+        <table className="table1">
           <thead>
             <tr>
               <th className="coluna">NOME</th>
               <th className="coluna">EMAIL</th>
-              <th className="coluna">TRABALHO</th> 
+              <th className="coluna">TRABALHO</th>
               <th className="coluna">
                 OPERAÇÕES <br /> EDITAR | APAGAR
               </th>

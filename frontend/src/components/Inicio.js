@@ -9,24 +9,27 @@ const Inicio = () => {
     <div className="containerGeral">
       <div id="slider">
         <div className="textoBanner">
-            <h1>Bem-vindos ao - SistCIARI</h1>
-            <p>Centro de Inclusão e Ajuda para Refugiados e Imigrantes</p>
+          <h1>Bem-vindos ao *SistCIARI*</h1>
+          <p>
+            Sistema de Cadastro do Centro de Inclusão e Ajuda para Refugiados e
+            Imigrantes
+          </p>
         </div>
-          <ul>
-              <li>
-                <img src={foto1} alt=""></img>
-              </li>
-              <li>
-                <img src={foto2} alt=""></img>
-              </li>
-              <li>
-                <img src={foto3} alt=""></img>
-              </li>
-              <li>
-                <img src={foto4} alt=""></img>                  
-              </li>
-          </ul>
-      </div>        
+        <ul>
+          <li>
+            <img src={foto1} alt=""></img>
+          </li>
+          <li>
+            <img src={foto2} alt=""></img>
+          </li>
+          <li>
+            <img src={foto3} alt=""></img>
+          </li>
+          <li>
+            <img src={foto4} alt=""></img>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };

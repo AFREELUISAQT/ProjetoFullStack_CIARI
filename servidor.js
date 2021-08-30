@@ -1,11 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
 const app = express();
 require("./backend/src/config/db");
 
 // ---Declarando a porta do servidor---
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8080;
 
 // ---Configurando os middelewares---
 app.use(express.json());

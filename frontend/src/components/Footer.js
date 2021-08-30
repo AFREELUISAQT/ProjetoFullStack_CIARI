@@ -4,8 +4,10 @@ function Footer() {
   return (
     <div>
       <footer>
-        <h5> CIARI, por As3Dva`s
-          C Copyright 2021 -  Todos os direitos reservados.</h5>
+        <h5>
+          &copy; Copyright 2021 - CIARI, por As3Dva`s. Todos os direitos
+          reservados.
+        </h5>
       </footer>
     </div>
   );

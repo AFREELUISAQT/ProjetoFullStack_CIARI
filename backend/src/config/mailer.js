@@ -1,12 +1,17 @@
 const nodemailer = require("nodemailer");
 const nodemailerSendgrid = require("nodemailer-sendgrid");
 
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
+
+const API_KEY = process.env.APYKEY_SENDGRID;
+
 // ---Criando o transporter em ambiente de produção com o serviço do "Sendgrid"---
 const createTrans = () => {
   const transport = nodemailer.createTransport(
     nodemailerSendgrid({
-      apiKey:
-        "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",
+      apiKey: `${API_KEY}`,
     })
   );
 
